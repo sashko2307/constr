@@ -1,13 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 $a: rgba(37, 99, 235, 1);
+$bdc: #e5e7eb;
+
+
 #docs-sidebar {
 	min-width: 260px;
 	border-radius: 0 7px 7px 0;
 }
 .sidebar {
 	min-width: 260px;
+	position: absolute;
 }
 input, select, textarea {
 	border: 1px solid rgba(229, 231, 235, 1);
@@ -40,8 +45,7 @@ input, select, textarea {
 	background: rgba(107, 114, 128, 1);
 }
 .profile-card {
-	max-width: 550px;	
-	padding: 40px;
+	max-width: 550px;
 }
 .profile-card_img img {
 	height: revert-layer;
@@ -51,4 +55,123 @@ input, select, textarea {
 }
 .profile-card_label {
 	min-width: 150px;
+}
+.container-fluid.pl-260 {
+	padding-left: 260px;
+}
+.tab-block button:not(:last-child) {
+	border-right: 1px solid $bdc;
+}
+.tabs-content {
+	padding: 40px;
+}
+.tabs-content_wrap {
+	gap: 15px;
+	flex-wrap: wrap;
+}
+.site-card {
+	border: 1px solid rgba(229, 231, 235, 1);
+	border-radius: 10px;
+	box-shadow: 0px 0.8370294570922852px 1.6740589141845703px 0px rgba(0, 0, 0, 0.05);
+	max-width: 310px;
+	min-width: 310px;
+}
+.site-card_top {
+	padding: 15px;
+}
+
+.site-card_status {
+	display: inline-block;
+	position: relative;
+	background: rgba(217, 249, 157, 1);
+	border-radius: 6px;
+	padding: 2px 5px 2px 20px;
+	margin-right: 10px;
+	&.site-card_status--grey {
+		background: rgba(229, 229, 229, 1);
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		left: 8px;
+		top: calc(50% - 3px);
+		background: rgba(31, 41, 55, 1);
+	}
+}
+
+.site-card .button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 125px;
+	font-size: 15px;
+	letter-spacing: .005em;
+	padding: 7px 15px;
+}
+.site-card .button img {
+	display: block;
+	min-width: 15px;
+	margin-right: 5px;
+}
+.site-card_ttl {
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.site-card_descr {
+	color: rgba(107, 114, 128, 1);
+	font-weight: 600;
+}
+.site-card_bot {
+	background: rgba(248, 250, 252, 1);
+	padding: 15px;
+}
+.site-card_link {
+	text-decoration: underline;
+	color: $a;
+	font-size: 16px;
+	font-weight: 600;
+}
+.site-card_edit {
+	color: rgba(59, 130, 246, 1);
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.005em;
+	&.site-card_edit--delete {
+		color: rgba(239, 68, 68, 1);
+	}
+}
+.input-block {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	.input-block_http {
+		padding: 15px;
+		background: rgba(248, 250, 252, 1);
+		border-radius: 10px 0   0 10px;
+		border: 1px solid rgba(229, 231, 235, 1);
+	}
+	.input-block_button {
+		background: $a;
+		width: 45px;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		border-radius: 0 10px 10px 0;
+	}
+	.input-block_input {
+		height: 100%;
+		width: 310px;
+	}
+	input {
+		height: 100%;
+		width: 100%;
+		text-indent: 15px;
+	}
+
 }

@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.scss';
+
 import Profile from './pages/Profile.jsx';
 import Sites from './pages/Sites';
+import Sidebar from './components/Sidebar/Sidebar';
 
 
 
@@ -11,14 +13,9 @@ import('preline')
 const App = () => {
 	return (
 	  <Router>
-		<nav className='nav'>
-		  <ul>
-			<li>
-			  <Link to="/">Сайти</Link>
-			  <Link to="/">Profile</Link>
-			</li>
-		  </ul>
-		</nav>
+		<div className='sidebar'>
+                <Sidebar />
+			</div>
   
 		<Routes>
 		  <Route path="/" element={<Profile />} />
